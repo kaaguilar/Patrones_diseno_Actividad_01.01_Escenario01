@@ -1,0 +1,14 @@
+-- Base de datos: vehiculos_db
+CREATE DATABASE IF NOT EXISTS vehiculos_db CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE vehiculos_db;
+
+CREATE TABLE IF NOT EXISTS vehiculos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  tipo VARCHAR(50) NOT NULL,
+  placa VARCHAR(20) NOT NULL UNIQUE,
+  marca VARCHAR(100) NOT NULL,
+  modelo VARCHAR(100) NOT NULL,
+  costoBase DECIMAL(12,2) NOT NULL,
+  matricula DECIMAL(12,2) DEFAULT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
